@@ -1,0 +1,17 @@
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+
+mydb = myclient["komal"]
+
+mycol=mydb["Sumeet"]
+print("Connected")
+
+mydata=mycol.insert_one({"name":"Komal","age":"19"})
+print("Inserted data")
+
+mydel=mycol.delete_one({"name":"Komal","age":"19"})
+print("Deleted")
+
+mydate=mycol.update_one({"age":"19"},{"$set":{"age":"18"}})
+print("Update")
