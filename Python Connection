@@ -15,3 +15,8 @@ print("Deleted")
 
 mydate=mycol.update_one({"age":"19"},{"$set":{"age":"18"}})
 print("Update")
+
+myquery={"name":"Komal"}
+newvalues={"$set":{"age":20}}
+mycol.update_many(myquery,newvalues)
+print("Updated")
