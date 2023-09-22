@@ -1,0 +1,17 @@
+<html>
+<body>
+
+<h2>Convert a string into a function</h2>
+<!-- <p>Data written as an JSON Array will be parsed into a JavaScript array.</p> -->
+<p id="demo"></p>
+
+<script>
+const text = '{"name":"Sumeet", "age":"function() {return 30;}","city":"Mumbai"}';
+const obj = JSON.parse(text)
+obj.age = eval("("+obj.age +")")
+document.getElementById("demo").innerHTML = obj.name + ", "+obj.age();
+
+</script>
+
+</body>
+</html>
